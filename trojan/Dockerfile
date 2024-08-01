@@ -1,12 +1,14 @@
 FROM centos:8
 ARG password="demo_password"
 
-RUN yum install yum-utils
-
-RUN yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-
+RUN rm /etc/yum.repos.d/*.repo && \
+    curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-vault-8.5.2111.repo && \
+    yum makecache && \
+    yum install -y yum-utils
+    
 RUN yum update -y && \
     yum install -y epel-release gnutls-bin gnutls-doc
+    
 RUN mkdir -p /usr/local/bin && \
     mkdir -p /usr/local/etc/trojan/cert/
 
