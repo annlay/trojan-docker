@@ -1,6 +1,8 @@
 FROM centos:8
 ARG password="demo_password"
 
+RUN yum install yum-utils
+
 RUN yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 
 RUN yum update -y && \
