@@ -1,11 +1,12 @@
 FROM centos:8
 ARG password="demo_password"
 
+RUN   yum makecache 
 RUN rm -rf /etc/yum.repos.d/*.repo && \
-    curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-8.repo && \
-    yum makecache && \
-    yum update -y && \
-    yum install -y yum-utils epel-release gnutls-bin gnutls-doc
+    curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-8.repo 
+RUN   yum makecache 
+RUN   yum update -y 
+RUN   yum install -y yum-utils epel-release gnutls-bin gnutls-doc
     
 RUN mkdir -p /usr/local/bin && \
     mkdir -p /usr/local/etc/trojan/cert/
