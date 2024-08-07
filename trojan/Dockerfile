@@ -1,4 +1,4 @@
-FROM centos:9
+FROM centos:8.2
 ARG password="demo_password"
 
 RUN yum makecache && \
