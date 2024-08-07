@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 ARG password="demo_password"
 
 RUN apt get update -y && \
-    yum apt get -y yum-utils epel-release gnutls-bin gnutls-doc
+    apt get -y epel-release gnutls-bin gnutls-doc
     
 RUN mkdir -p /usr/local/bin && \
     mkdir -p /usr/local/etc/trojan/cert/
