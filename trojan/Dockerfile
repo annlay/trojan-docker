@@ -1,4 +1,4 @@
-FROM centos:8.5
+FROM centos:8
 ARG password="demo_password"
 
 RUN rm -rf /etc/yum.repos.d/*.repo && \
