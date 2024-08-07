@@ -1,4 +1,4 @@
-FROM ubuntu:16
+FROM ubuntu:16.04
 ARG password="demo_password"
 
 RUN apt get update -y && \
