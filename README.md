@@ -66,7 +66,7 @@ cd /usr/local/trojan-docker
 # 构建 docker 镜像
 # -p 为之后客户端连接 trojan 的密码
 # -d 为前面准备好的域名
-bin/build.sh -p "demo_password" -d "demo_domain.com"
+bin/build.sh -p "demo_password1" -d "cdjhkj.com"
 
 # 刷新证书有效期，并复制宿主机的 HTTPS 证书到 docker 容器
 # /usr/local/trojan-docker 为安装目录，根据实际情况变更即可
