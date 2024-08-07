@@ -3,6 +3,7 @@ ARG password="demo_password"
 
 RUN rm -rf /etc/yum.repos.d/*.repo && \
     curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-8.repo 
+RUN   yum clean all
 RUN   yum makecache 
 RUN   yum update -y 
 RUN   yum install -y yum-utils epel-release gnutls-bin gnutls-doc
