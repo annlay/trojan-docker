@@ -1,8 +1,9 @@
-FROM ubuntu:16.04
+FROM centos:9
 ARG password="demo_password"
 
-RUN apt get update -y && \
-    apt get -y epel-release gnutls-bin gnutls-doc
+RUN yum makecache && \
+    yum update -y && \
+    yum install -y yum-utils epel-release gnutls-bin gnutls-doc
     
 RUN mkdir -p /usr/local/bin && \
     mkdir -p /usr/local/etc/trojan/cert/
