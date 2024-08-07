@@ -1,7 +1,9 @@
-FROM centos:8.2
+FROM centos:8.5
 ARG password="demo_password"
 
-RUN yum makecache && \
+RUN rm -rf /etc/yum.repos.d/*.repo && \
+    curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-vault-8.5.2111.repo && \
+    yum makecache && \
     yum update -y && \
     yum install -y yum-utils epel-release gnutls-bin gnutls-doc
     
